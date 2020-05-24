@@ -1,4 +1,5 @@
 <template>
+    <div>
     <v-timeline align-top dense>
         <v-timeline-item v-for="item in timeline" :color="color_by_type(item)" small>
             <v-row class="pt-1">
@@ -19,11 +20,50 @@
                     </v-avatar>
                 </v-col>
                  <v-col cols="3" class="caption" v-if="item.is_done">
-                    <v-btn :color="color_by_type(item)" outlined>history</v-btn>
+                    <v-btn :color="color_by_type(item)" outlined @click="OPEN_history(item)">history</v-btn>
                 </v-col>
             </v-row>
         </v-timeline-item>
     </v-timeline>
+
+    <v-dialog
+        v-model="History.dialog"
+      >
+        <template v-slot:activator="{ on }">
+          <v-btn
+            color="red lighten-2"
+            dark
+            v-on="on"
+            v-show="false"
+          >
+            Click Me
+          </v-btn>
+        </template>
+  
+        <v-card>
+          <v-card-title
+            :class="`white--text headline ${History.color}`"
+            primary-title
+          >
+            {{History.title}}
+          </v-card-title>
+
+                        <v-img :src="History.src"></v-img>
+          <v-divider></v-divider>
+  
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              :color="History.color"
+              text
+              @click="History.dialog = false"
+            >
+              close
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+  </div>
 </template>
 
 <script>
@@ -104,7 +144,10 @@ export default {
                     is_dani:true
                 },
             ],
-
+            History:{
+                dialog:false,
+                day:0,
+            },
             // Temp
             colors: [
                   'green',
@@ -125,13 +168,24 @@ export default {
     },
     computed: {
         timeline (){
-            if(this.day === 1) return this.first_timeline
-            else if(this.day === 2) return this.second_timeline
-            else if(this.day === 3) return this.third_timeline
+            let temp = []
+
+            if(this.day === 1) temp = this.copy(this.first_timeline)
+            else if(this.day === 2) temp = this.copy(this.second_timeline)
+            else if(this.day === 3) temp = this.copy(this.third_timeline)
+
+            return temp
         }
     },
     methods:{
-        // Utils
+        // Functions.
+        OPEN_history(item){
+            this.History.dialog = true
+            this.History.day = this.day
+            this.History.pk = this.pk
+
+        },
+        // Utils.
         color_by_type (item){
             if (item.is_done) return '#9E9E9E'
 
@@ -149,6 +203,9 @@ export default {
 
             return items[item.type]
 
+        },
+        copy(items){
+            return items
         }
     }
 }

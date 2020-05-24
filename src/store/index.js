@@ -9,7 +9,10 @@ export default new Vuex.Store({
     ],
     Dani_items:[
     ],
-    refresh:false,
+    Map_Item:{
+        title:'Jeju Map',
+        color:'primary'
+    }
 
   },
   mutations: {
@@ -18,6 +21,9 @@ export default new Vuex.Store({
     },
     ADD_Dani_item (state, item) {
         state.Dani_items.push(item)
+    },
+    SET_Map(state, item){
+        state.Map_Item = item
     },
   },
   actions: {
