@@ -2,14 +2,14 @@
     <div>
         <v-card class="overflow-hidden" flat>
             <v-app-bar absolute :color="color" dark shrink-on-scroll elevate-on-scroll prominent scroll-target="#scrolling-techniques">
-                <v-toolbar-title :class="'title_font' ">{{Title.text}}</v-toolbar-title>
+                <v-toolbar-title :class="'title_font' ">{{Title.text}} {{height}}</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon>
                     <v-icon>mdi-map</v-icon>
                 </v-btn>
             </v-app-bar>
-            <v-sheet id="scrolling-techniques" class="overflow-y-auto" max-height="600">
-                <v-container style="height: 1000px; margin-top:130px;">
+            <v-sheet id="scrolling-techniques" class="overflow-y-auto" :max-height="height">
+                <v-container :style="`height: ${height}px; margin-top:130px;`">
                     <Preapare v-if="days===0" />
                     <Timeline :day="days" v-else />
                 </v-container>
@@ -41,10 +41,17 @@ export default {
         return {
             date: new Date,
             days:0,
+            window:{
+                height:600,
+                width:600,
+            }
         }
     },
     computed :{
-        is_xs(){
+        height (){
+            return this.window.height - (48)
+        },
+        is_xs (){
             return this.$vuetify.breakpoint.xsOnly
         },
         color () {
@@ -67,11 +74,18 @@ export default {
     watch :{
     },
     destroyed() {
+        window.removeEventListener('resize', this.handleResize)
     },
     created () {
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize();
     },
     methods:{
         // Jezz API.
+        handleResize() {
+            this.window.width = window.innerWidth;
+            this.window.height = window.innerHeight;
+        },
     }   
 };
 
