@@ -1,37 +1,27 @@
 <template>
-   <div>
-     <v-app-bar
-      app
-      :color="color"
-        flat
-        dark
-    >
-      <!-- <v-toolbar-title :class="Title.color + ' font-weight-bold' ">{{Title.text}}</v-toolbar-title> -->
-      <v-toolbar-title :class="'title_font' ">{{Title.text}}</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon dark>
-        <v-icon>mdi-map</v-icon>
-      </v-btn>
-    </v-app-bar>
-        
-        <Preapare v-if="days===0"/>
-        <Timeline :day="days" v-else/>
-
-      <v-tabs
-      v-model="days"
-        style="position: absolute; bottom: 0px;"
-        background-color="white"
-        :color="color"
-        centered
-
-      >
-        <v-tab>Prepare</v-tab>
-        <v-tab>1st</v-tab>
-        <v-tab>2nd</v-tab>
-        <v-tab>3rd</v-tab>
-
-      </v-tabs>
-   </div>
+    <div>
+        <v-card class="overflow-hidden" flat>
+            <v-app-bar absolute :color="color" dark shrink-on-scroll elevate-on-scroll prominent scroll-target="#scrolling-techniques">
+                <v-toolbar-title :class="'title_font' ">{{Title.text}}</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn icon>
+                    <v-icon>mdi-map</v-icon>
+                </v-btn>
+            </v-app-bar>
+            <v-sheet id="scrolling-techniques" class="overflow-y-auto" max-height="600">
+                <v-container style="height: 1000px; margin-top:130px;">
+                    <Preapare v-if="days===0" />
+                    <Timeline :day="days" v-else />
+                </v-container>
+            </v-sheet>
+        </v-card>
+        <v-tabs v-model="days" style="position: absolute; bottom: 0px;" background-color="white" :color="color" centered>
+            <v-tab>Prepare</v-tab>
+            <v-tab>1st</v-tab>
+            <v-tab>2nd</v-tab>
+            <v-tab>3rd</v-tab>
+        </v-tabs>
+    </div>
 </template>
 
 <script>
