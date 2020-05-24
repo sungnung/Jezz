@@ -1,40 +1,27 @@
 <template>
-    <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
-        <v-timeline-item v-for="(item, i) in timeline" :key="i" :color="color_by_type(item)" :icon="item.icon" fill-dot>
-            <v-card v-if="!item.is_done" :color="color_by_type(item)" dark>
-                <v-card-title class="title">{{item.time}} {{item.title}}</v-card-title>
-                <v-card-text class="white text--primary">
-                    <p>Lorem ipsum dolor</p>
-                    <v-btn :color="color_by_type(item)" class="mx-0" outlined @click="item.is_done=true">
-                        Finished
-                    </v-btn>
-                </v-card-text>
-            </v-card>
-
-            <v-expand-transition>
-            <v-card v-show="item.is_done">
-                <v-carousel height="200" :continuous="false" :cycle="cycle" :show-arrows="false" hide-delimiter-background delimiter-icon="mdi-minus">
-                    <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                        <v-sheet :color="colors[i]" height="100%" tile>
-                            <v-row class="fill-height" align="center" justify="center">
-                                <div class="display-3">{{ slide }} Slide</div>
-                            </v-row>
-                        </v-sheet>
-                    </v-carousel-item>
-                </v-carousel>
-                <v-list two-line>
-                    <v-list-item>
-                        <v-list-item-avatar>
-                            <v-icon>{{item.icon}}</v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title>{{item.type}}</v-list-item-title>
-                            <v-list-item-subtitle>{{item.title}}</v-list-item-subtitle>
-                        </v-list-item-content>
-                    </v-list-item>
-                </v-list>
-            </v-card>
-        </v-expand-transition>
+    <v-timeline align-top dense>
+        <v-timeline-item v-for="item in timeline" :color="color_by_type(item)" small>
+            <v-row class="pt-1">
+                <v-col cols="3" class="caption">
+                    <strong :style="item.is_done ? 'text-decoration:line-through;color:grey;' : ''">{{item.time}}</strong>
+                </v-col>
+                <v-col>
+                    <strong  :style="item.is_done ? 'text-decoration:line-through;color:grey;' : `color:${color_by_type(item)}`">{{item.type}}</strong>
+                    <div :style="item.is_done ? 'text-decoration:line-through;color:grey;' : ''" class="caption mb-2">
+                    {{item.title}}
+                     <v-btn fab x-small outlined :color="color_by_type(item)">{{item.place}}</v-btn>
+                </div>
+                    <v-avatar v-if="item.is_may&&!item.is_done">
+                        <v-img :src="may"></v-img>
+                    </v-avatar>
+                    <v-avatar v-if="item.is_dani&&!item.is_done">
+                        <v-img :src="dani"></v-img>
+                    </v-avatar>
+                </v-col>
+                 <v-col cols="3" class="caption" v-if="item.is_done">
+                    <v-btn :color="color_by_type(item)" outlined>history</v-btn>
+                </v-col>
+            </v-row>
         </v-timeline-item>
     </v-timeline>
 </template>
@@ -53,46 +40,68 @@ export default {
     },
     data () {
         return {
+            may:require('@/assets/img/may.png'),
+            dani:require('@/assets/img/dani.png'),
             first_timeline: [
                 {
-                    type: 'Tour',
-                    time: '09:00',
+                    type: 'Ready',
+                    time: '9-10 AM',
                     title:'비행기 탑승',
                     icon:'mdi-airplane',
-                    place:'',
+                    place:10,
+                    is_done:true,
+                    is_may:true,
+                    is_dani:true
+                },
+                {
+                    type: 'Ready',
+                    time: '10:30 AM',
+                    title:'렌트카 대여',
+                    icon:'mdi-car',
+                    place:10,
                     is_done:false,
+                    is_may:true,
+                    is_dani:true
                 },
                 {
                     type: 'Activity',
-                    time: '10:30',
-                    title:'렌트카 대여',
-                    icon:'mdi-car',
-                    place:'',
-                    is_done:false,
-                },
-                {
-                    type: 'Meal',
-                    time: '1980',
-                    title:'비행기 탑승',
+                    time: '11:30',
+                    title:'드라이브: 용담해안도로',
                     icon:'mdi-airplane',
-                    place:'',
+                    place:10,
                     is_done:false,
+                    is_may:true,
+                    is_dani:true
                 },
                 {
                     type: 'Dessert',
-                    time: '1990',
-                    title:'비행기 탑승',
+                    time: '12:00',
+                    title:'베이커리',
                     icon:'mdi-airplane',
-                    place:'',
+                    place:10,
                     is_done:false,
+                    is_may:true,
+                    is_dani:true
+                },
+                {
+                    type: 'Tour',
+                    time: '13:00',
+                    title:'협재해변',
+                    icon:'mdi-airplane',
+                    place:10,
+                    is_done:false,
+                    is_may:true,
+                    is_dani:true
                 },
                 {
                     type: 'Accomodation',
                     time: '2000',
                     title:'비행기 탑승',
                     icon:'mdi-airplane',
-                    place:'',
+                    place:10,
                     is_done:false,
+                    is_may:true,
+                    is_dani:true
                 },
             ],
 
@@ -124,10 +133,12 @@ export default {
     methods:{
         // Utils
         color_by_type (item){
-            if (item.is_done) return 'grey lighten-2'
+            if (item.is_done) return '#9E9E9E'
 
 
             let items = {
+                Ready:'#4CAF50', // 준비
+
                 Tour:'#B57082', // 관광
                 Activity:'#D06380', // 체험
                 Meal:'#ED4C00', // 식사
