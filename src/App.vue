@@ -2,7 +2,7 @@
     <v-app>
       <v-content>
         <Jezz />
-        <copyright />
+        <!-- <copyright /> -->
       </v-content>
     </v-app>
 </template>
