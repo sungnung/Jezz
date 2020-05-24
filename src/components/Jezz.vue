@@ -76,7 +76,7 @@ export default {
             }
         },
         appImg(){
-            return require(`@/assets/img/${this.days}.jpeg`)
+            return require(`@/assets/img/${this.days}.png`)
         }
     },
     watch :{
