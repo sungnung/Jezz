@@ -1,6 +1,6 @@
 {
   "name": "Jezz",
-  "description": "Trip for Jeju.",
+  "description": "Trip to Jeju.",
   "short_name": "Jezz",
   "icons": [
     {
@@ -16,7 +16,7 @@
   ],
   "start_url": "/Jezz/index.html",
   "display": "standalone",
-  "background_color": "#424242",
-  "theme_color": "#30336b"
+  "background_color": "#30336b",
+  "theme_color": "#424242"
 }
 

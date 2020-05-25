@@ -111,7 +111,7 @@ export default {
                 {
                     type: 'Dessert',
                     time: '12 PM',
-                    title:'베이커리',
+                    title:'베이커리 : 빽다방, 앙뚜아네트, 나모나모',
                     icon:'mdi-airplane',
                     place:3,
                     is_done:false,
@@ -141,7 +141,7 @@ export default {
                 {
                     type: 'Meal',
                     time: '17 - 18 PM',
-                    title:'서귀포 시 - 흑돼지',
+                    title:'동홍정육마트',
                     icon:'mdi-airplane',
                     place:6,
                     is_done:false,
@@ -224,7 +224,7 @@ export default {
                 {
                     type: 'Meal',
                     time: '18-20 PM',
-                    title:'탐라가든 (백돼지 생갈비, 삼겹살)',
+                    title:'탐라가든 / 더육정육식당',
                     icon:'mdi-airplane',
                     place:13,
                     is_done:false,
