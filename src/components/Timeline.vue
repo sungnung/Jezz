@@ -456,6 +456,7 @@ export default {
     methods:{
         // Functions.
         OPEN_history(item){
+            if(!item.is_done) return ''
             this.History.dialog = true
             this.History.title = item.title
             this.History.day = this.day
