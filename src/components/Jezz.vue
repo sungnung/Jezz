@@ -142,7 +142,7 @@ export default {
         // Functions.
         OPEN_MAP(){
             this.Map_dialog = true
-            this.$store.commit('SET_Map', {title:'Jehu Map',color:'primary'})
+            this.$store.commit('SET_Map', {title:'Jeju Map',color:'primary'})
         }
     }   
 };
