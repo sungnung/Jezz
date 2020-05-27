@@ -20,7 +20,7 @@
                 </v-container>
             </v-sheet>
         </v-card>
-        <v-tabs v-model="days" style="position: absolute; bottom: 0px;" background-color="white" :color="color" centered>
+        <v-tabs v-model="days" style="position: absolute; bottom: 0px;" background-color="white" :color="color" centered @change="reset()">
             <v-tab>Prepare</v-tab>
             <v-tab>1st</v-tab>
             <v-tab>2nd</v-tab>
@@ -89,7 +89,7 @@ export default {
                 width:600,
             },
             Map_dialog:false,
-
+            random: 0,
             JeJuMap:require('@/assets/img/JeJuMap.png')
         }
     },
@@ -117,7 +117,7 @@ export default {
             }
         },
         appImg(){
-            return require(`@/assets/img/${this.days}.png`)
+            return require(`@/assets/img/bg_${this.random}.jpeg`)
         },
         Map_Item (){
             return this.$store.state.Map_Item
@@ -129,6 +129,7 @@ export default {
         window.removeEventListener('resize', this.handleResize)
     },
     created () {
+        this.reset()
         window.addEventListener('resize', this.handleResize)
         this.handleResize();
     },
@@ -143,6 +144,10 @@ export default {
         OPEN_MAP(){
             this.Map_dialog = true
             this.$store.commit('SET_Map', {title:'Jeju Map',color:'primary'})
+        },
+
+        reset(){
+            this.random =Math.floor(Math.random() * 10)
         }
     }   
 };
