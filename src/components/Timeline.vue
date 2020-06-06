@@ -35,11 +35,11 @@
                     Click Me
                 </v-btn>
             </template>
-            <v-card>
+              <v-card>
                 <v-card-title :class="`deep-purple--text headline ${History.color}`" primary-title>
                     <v-icon v-show="History.icon">{{History.icon}}</v-icon> {{History.title}}
                 </v-card-title>
-                <v-carousel height="400" hide-delimiter-background show-arrows-on-hover>
+                <v-carousel hide-delimiter-background show-arrows-on-hover>
                     <v-carousel-item v-for="(slide, i) in History.src_list" :key="i" :src="slide">
                     </v-carousel-item>
                 </v-carousel>
@@ -86,10 +86,10 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3]
                 },
                 {
-                    pk:1,
+                    pk:-1,
                     year:2020,
                     month:5,
                     day:28,
@@ -102,23 +102,23 @@ export default {
                     is_done:false,
                     is_may:false,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[]
                 },
                 {
-                    pk:2,
+                    pk:1,
                     year:2020,
                     month:5,
                     day:28,
                     type: 'Meal',
                     time: '11 AM',
                     hour:12,
-                    title:'백리향 (갈치구이, 흑돼지 제육)',
+                    title:'백리향 (갈치/고등어구이/제육볶음)',
                     icon:'mdi-food-variant',
                     place:1,
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3]
                 },
                 {
                     pk:3,
@@ -134,7 +134,7 @@ export default {
                     is_done:false,
                     is_may:false,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6]
                 },
                 {
                     pk:4,
@@ -144,13 +144,13 @@ export default {
                     type: 'Dessert',
                     time: '12 PM',
                     hour:13,
-                    title:'베이커리 : 빽다방, 앙뚜아네트, 나모나모',
+                    title:'베이커리 : 빽다방 베이커리',
                     icon:'mdi-baguette',
                     place:3,
                     is_done:false,
                     is_may:true,
                     is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5]
                 },
                 {
                     pk:5,
@@ -158,7 +158,7 @@ export default {
                     month:5,
                     day:28,
                     type: 'Tour',
-                    time: '13 PM',
+                    time: '13 - 16 PM',
                     hour:14,
                     title:'협재해변',
                     icon:'mdi-beach',
@@ -166,7 +166,7 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4]
                 },
                 {
                     pk:6,
@@ -174,50 +174,18 @@ export default {
                     month:5,
                     day:28,
                     type: 'Tour',
-                    time: '14 - 16 PM',
+                    time: '16 - 18 PM',
                     hour:16,
-                    title:'마라도',
-                    icon:'mdi-island',
+                    title:'금오름',
+                    icon:'mdi-image-filter-hdr',
                     place:5,
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
                 },
                 {
                     pk:7,
-                    year:2020,
-                    month:5,
-                    day:28,
-                    type: 'Meal',
-                    time: '17 - 18 PM',
-                    hour:18,
-                    title:'동홍정육마트',
-                    icon:'mdi-food-steak',
-                    place:6,
-                    is_done:false,
-                    is_may:true,
-                    is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
-                },
-                {
-                    pk:8,
-                    year:2020,
-                    month:5,
-                    day:28,
-                    type: 'Accomodation',
-                    time: '19 PM',
-                    hour:20,
-                    title:'오션 팰리스호텔 (Check In)',
-                    icon:'mdi-bed-outline',
-                    place:7,
-                    is_done:false,
-                    is_may:false,
-                    is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
-                },
-                {
-                    pk:9,
                     year:2020,
                     month:5,
                     day:28,
@@ -230,7 +198,39 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3]
+                },
+                {
+                    pk:8,
+                    year:2020,
+                    month:5,
+                    day:28,
+                    type: 'Meal',
+                    time: '20 - 22 PM',
+                    hour:18,
+                    title:'뽈살집',
+                    icon:'mdi-food-steak',
+                    place:6,
+                    is_done:false,
+                    is_may:true,
+                    is_dani:false,
+                    src_list:[0, 1, 2, 3]
+                },
+                {
+                    pk:9,
+                    year:2020,
+                    month:5,
+                    day:28,
+                    type: 'Accomodation',
+                    time: ' 22PM',
+                    hour:20,
+                    title:'오션 팰리스호텔 (Check In)',
+                    icon:'mdi-bed-outline',
+                    place:7,
+                    is_done:false,
+                    is_may:false,
+                    is_dani:true,
+                    src_list:[0]
                 }
             ],
 
@@ -240,40 +240,24 @@ export default {
                     year:2020,
                     month:5,
                     day:29,
-                    type: 'Dessert',
-                    time: '10 AM',
+                    type: 'Activity',
+                    time: '11 - 12 PM',
                     hour:12,
-                    title:'우드노트',
-                    icon:'mdi-coffee',
-                    place:9,
+                    title:'쇠소깍 (카약)',
+                    icon:'mdi-sail-boat',
+                    place:10,
                     is_done:false,
-                    is_may:false,
+                    is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                 },
                 {
                     pk:11,
                     year:2020,
                     month:5,
                     day:29,
-                    type: 'Activity',
-                    time: '11-12 PM',
-                    hour:12,
-                    title:'쇠소깍',
-                    icon:'mdi-sail-boat',
-                    place:10,
-                    is_done:false,
-                    is_may:true,
-                    is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
-                },
-                {
-                    pk:12,
-                    year:2020,
-                    month:5,
-                    day:29,
                     type: 'Meal',
-                    time: '13-14 PM',
+                    time: '13 - 14 PM',
                     hour:14,
                     title:'한라전복 (전복뚝배기)',
                     icon:'mdi-pasta',
@@ -281,26 +265,26 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4]
                 },
                 {
-                    pk:13,
+                    pk:12,
                     year:2020,
                     month:5,
                     day:29,
                     type: 'Tour',
-                    time: '15-16 PM',
+                    time: '15 - 16 PM',
                     hour:16,
-                    title:'새별오름',
+                    title:'송악산',
                     icon:'mdi-image-filter-hdr',
                     place:12,
                     is_done:false,
                     is_may:false,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                 },
                 {
-                    pk:14,
+                    pk:13,
                     year:2020,
                     month:5,
                     day:29,
@@ -313,7 +297,23 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                },
+                {
+                    pk:14,
+                    year:2020,
+                    month:5,
+                    day:29,
+                    type: 'Meal',
+                    time: '18 - 20 PM',
+                    hour:20,
+                    title:'더육정육식당',
+                    icon:'mdi-cow',
+                    place:13,
+                    is_done:false,
+                    is_may:false,
+                    is_dani:true,
+                    src_list:[0, 1, 2, 3, 4, 5, 6]
                 },
                 {
                     pk:15,
@@ -321,37 +321,21 @@ export default {
                     month:5,
                     day:29,
                     type: 'Meal',
-                    time: '18-20 PM',
-                    hour:20,
-                    title:'탐라가든 / 더육정육식당',
-                    icon:'mdi-cow',
-                    place:13,
-                    is_done:false,
-                    is_may:false,
-                    is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
-                },
-                {
-                    pk:16,
-                    year:2020,
-                    month:5,
-                    day:29,
-                    type: 'Meal',
-                    time: '23 PM',
+                    time: '22 PM',
                     hour:23,
-                    title:'모살물 (쥐치,고등어 회)',
+                    title:'한치물회',
                     icon:'mdi-fish',
                     place:15,
                     is_done:false,
                     is_may:true,
                     is_dani:false,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1]
                 },
             ],
 
             third_timeline:[
                 {
-                    pk:17,
+                    pk:16,
                     year:2020,
                     month:5,
                     day:30,
@@ -365,16 +349,16 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3]
                 },
                 {
-                    pk:18,
+                    pk:17,
                     year:2020,
                     month:5,
                     day:30,
                     is_birthday:true,
                     type: 'Tour',
-                    time: '11-15 PM',
+                    time: '11 - 15 PM',
                     hour:16,
                     title:'자유시간',
                     icon:'mdi-account-star',
@@ -382,10 +366,10 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[0, 1, 2, 3, 4, 5, 6, 7, 8]
                 },
                 {
-                    pk:19,
+                    pk:18,
                     year:2020,
                     month:5,
                     day:30,
@@ -399,10 +383,10 @@ export default {
                     is_done:false,
                     is_may:false,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[]
                 },
                 {
-                    pk:20,
+                    pk:19,
                     year:2020,
                     month:5,
                     day:30,
@@ -416,7 +400,7 @@ export default {
                     is_done:false,
                     is_may:true,
                     is_dani:true,
-                    src_list:['0.png','1.png','2.png','3.png']
+                    src_list:[]
                 },
             ],
 
@@ -446,24 +430,25 @@ export default {
         timeline (){
             let temp = []
 
-            if(this.day === 1) temp = this.passed(this.first_timeline)
-            else if(this.day === 2) temp = this.passed(this.second_timeline)
-            else if(this.day === 3) temp = this.passed(this.third_timeline)
+            if(this.day === 1) temp = this.first_timeline
+            else if(this.day === 2) temp = this.second_timeline
+            else if(this.day === 3) temp = this.third_timeline
 
             return temp
         }
     },
     methods:{
-        // Functions.
+        // Functions.``
         OPEN_history(item){
-            if(!item.is_done) return ''
+            if(!item.src_list.length) return ''
+
             this.History.dialog = true
             this.History.title = item.title
             this.History.day = this.day
             this.History.pk = this.pk
             this.History.src_list =[]
             item.src_list.forEach(src=>{
-                this.History.src_list.push(require(`@/assets/img/${item.pk}_${src}`))
+                this.History.src_list.push(require(`@/assets/img/${item.pk}_${src}.jpeg`))
             })
 
 
