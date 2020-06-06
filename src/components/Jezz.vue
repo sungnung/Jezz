@@ -9,6 +9,9 @@
                     <span v-else-if="days===3">&#128525</span>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
+                <v-btn icon @click="OPEN_GIF()">
+                    <v-icon>mdi-animation-play </v-icon>
+                </v-btn>
                 <v-btn icon @click="OPEN_MAP()">
                     <v-icon>mdi-map</v-icon>
                 </v-btn>
@@ -26,44 +29,36 @@
             <v-tab>2nd</v-tab>
             <v-tab>3rd</v-tab>
         </v-tabs>
-
-      <v-dialog
-        v-model="Map_dialog"
-      >
-        <template v-slot:activator="{ on }">
-          <v-btn
-            color="red lighten-2"
-            dark
-            v-on="on"
-            v-show="false"
-          >
-            Click Me
-          </v-btn>
-        </template>
-  
-        <v-card>
-          <v-card-title
-            :class="`white--text headline ${Map_Item.color}`"
-            primary-title
-          >
-            {{Map_Item.title}}
-          </v-card-title>
-
-                        <v-img :src="JeJuMap"></v-img>
-          <v-divider></v-divider>
-  
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              :color="Map_Item.color"
-              text
-              @click="Map_dialog = false"
-            >
-              close
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+        <v-dialog v-model="Map_dialog">
+            <template v-slot:activator="{ on }">
+                <v-btn color="red lighten-2" dark v-on="on" v-show="false">
+                    Click Me
+                </v-btn>
+            </template>
+            <v-card>
+                <v-card-title :class="`white--text headline ${Map_Item.color}`" primary-title>
+                    {{Map_Item.title}}
+                </v-card-title>
+                <v-img :src="JeJuMap"></v-img>
+                <v-divider></v-divider>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn :color="Map_Item.color" text @click="Map_dialog = false">
+                        close
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+        <v-dialog v-model="GIF_dialog" fullscreen >
+            <template v-slot:activator="{ on }">
+                <v-btn color="red lighten-2" dark v-on="on" v-show="false">
+                    Click Me
+                </v-btn>
+            </template>
+            <v-card @click="GIF_dialog=false">
+                <v-img :src="GIF"></v-img>
+            </v-card>
+        </v-dialog>
     </div>
 </template>
 
@@ -89,8 +84,10 @@ export default {
                 width:600,
             },
             Map_dialog:false,
+            GIF_dialog:false,
             random: 0,
-            JeJuMap:require('@/assets/img/JeJuMap.png')
+            JeJuMap:require('@/assets/img/JeJuMap.png'),
+            GIF:require('@/assets/img/go.gif'),
         }
     },
     computed :{
@@ -144,6 +141,9 @@ export default {
         OPEN_MAP(){
             this.Map_dialog = true
             this.$store.commit('SET_Map', {title:'Jeju Map',color:'primary'})
+        },
+        OPEN_GIF(){
+            this.GIF_dialog = true
         },
 
         reset(){
