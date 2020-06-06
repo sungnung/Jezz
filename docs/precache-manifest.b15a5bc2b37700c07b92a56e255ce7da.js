@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc33023f34186cec3ef8",
+    "revision": "340e74033ee7c7965b7f",
     "url": "/Jezz/css/app.90e65ea7.css"
   },
   {
@@ -424,8 +424,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Jezz/img/6_7.043f620d.jpeg"
   },
   {
-    "revision": "ac4bd893b55b57a752b5db8924932226",
-    "url": "/Jezz/img/6_8.ac4bd893.jpeg"
+    "revision": "43c7b3c8383eec0e73084778035304d7",
+    "url": "/Jezz/img/6_8.43c7b3c8.jpeg"
   },
   {
     "revision": "c3a85122b61b91d62ccc3cb806fca345",
@@ -472,44 +472,88 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Jezz/img/JeJuMap.4f0da414.png"
   },
   {
-    "revision": "f2e9680c7f1087ff7eaf94349eae0d1c",
-    "url": "/Jezz/img/bg_0.f2e9680c.jpeg"
+    "revision": "020fa0a6b306f90fabe2c4452367add8",
+    "url": "/Jezz/img/bg_00.020fa0a6.jpeg"
   },
   {
-    "revision": "aaee0e21d05d7ca05dfedf2f2f53fc11",
-    "url": "/Jezz/img/bg_09.aaee0e21.jpeg"
+    "revision": "3725ff2b5d05da9e4e9989c2959fef80",
+    "url": "/Jezz/img/bg_01.3725ff2b.jpeg"
   },
   {
-    "revision": "57936b787b407c840eabeb4921159431",
-    "url": "/Jezz/img/bg_1.57936b78.jpeg"
+    "revision": "59ead09ddcdcc704074c74efc438730c",
+    "url": "/Jezz/img/bg_02.59ead09d.jpeg"
   },
   {
-    "revision": "ea78dcd1083bdc645237e93f4491bc92",
-    "url": "/Jezz/img/bg_2.ea78dcd1.jpeg"
+    "revision": "2cfafb07989e5c8442496ca85fe2a3d6",
+    "url": "/Jezz/img/bg_03.2cfafb07.jpeg"
   },
   {
-    "revision": "ac7f51bb58588c3f2952eee44383e98f",
-    "url": "/Jezz/img/bg_3.ac7f51bb.jpeg"
+    "revision": "5c3c75ccc16cb24917de07357ae5a72a",
+    "url": "/Jezz/img/bg_04.5c3c75cc.jpeg"
   },
   {
-    "revision": "11c42b174bccc72b2c2b6c68de9d39e9",
-    "url": "/Jezz/img/bg_4.11c42b17.jpeg"
+    "revision": "0ffa737a694e41f683823227a2c0c107",
+    "url": "/Jezz/img/bg_05.0ffa737a.jpeg"
   },
   {
-    "revision": "bf45983665658c8824f1fcdf0821de62",
-    "url": "/Jezz/img/bg_5.bf459836.jpeg"
+    "revision": "593aa557a57d3bc6f8bed610288a4716",
+    "url": "/Jezz/img/bg_06.593aa557.jpeg"
   },
   {
-    "revision": "0a528f1ddd327d64c9e0bf0d2c4aef6d",
-    "url": "/Jezz/img/bg_6.0a528f1d.jpeg"
+    "revision": "f6aafc84f712cbec5fdb25b874999a47",
+    "url": "/Jezz/img/bg_07.f6aafc84.jpeg"
   },
   {
-    "revision": "2f744e37da20c87d6d34c94f9eb4be40",
-    "url": "/Jezz/img/bg_7.2f744e37.jpeg"
+    "revision": "e237396ca822e4118eaacc4fd3e11858",
+    "url": "/Jezz/img/bg_08.e237396c.jpeg"
   },
   {
-    "revision": "8507e37ca263f56f1e42368e599c414f",
-    "url": "/Jezz/img/bg_8.8507e37c.jpeg"
+    "revision": "88a6ff0d096af00759c1df054e6cab1c",
+    "url": "/Jezz/img/bg_09.88a6ff0d.jpeg"
+  },
+  {
+    "revision": "784b6a9b21475818fbb09ec5b2ad389c",
+    "url": "/Jezz/img/bg_10.784b6a9b.jpeg"
+  },
+  {
+    "revision": "348be9f211652b6bcc9f2f85e7035d14",
+    "url": "/Jezz/img/bg_11.348be9f2.jpeg"
+  },
+  {
+    "revision": "ad403facd8eb967f6d1cb9cf369cf80f",
+    "url": "/Jezz/img/bg_12.ad403fac.jpeg"
+  },
+  {
+    "revision": "90b96d8e7c5f0e41a7c860c566988ead",
+    "url": "/Jezz/img/bg_13.90b96d8e.jpeg"
+  },
+  {
+    "revision": "a9ed98c854ebb66cdc819c21d81e72f0",
+    "url": "/Jezz/img/bg_14.a9ed98c8.jpeg"
+  },
+  {
+    "revision": "2bcf30f05af86646fbd682ac03cb864f",
+    "url": "/Jezz/img/bg_15.2bcf30f0.jpeg"
+  },
+  {
+    "revision": "b41925e63b5bb55ef6033e3d96634be7",
+    "url": "/Jezz/img/bg_16.b41925e6.jpeg"
+  },
+  {
+    "revision": "1125309e4e7a0177620b8f0ae3bd42bb",
+    "url": "/Jezz/img/bg_17.1125309e.jpeg"
+  },
+  {
+    "revision": "91e962f5d40f1b001f3842d0c6a5b7e5",
+    "url": "/Jezz/img/bg_18.91e962f5.jpeg"
+  },
+  {
+    "revision": "6fbcd1b8341f4ff77fe1b948236e8481",
+    "url": "/Jezz/img/bg_19.6fbcd1b8.jpeg"
+  },
+  {
+    "revision": "7b094cca2d0b14d36435baf6cdcce35a",
+    "url": "/Jezz/img/bg_20.7b094cca.jpeg"
   },
   {
     "revision": "1b33bc34c3ccb2a0596e732dc6c565d3",
@@ -536,12 +580,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Jezz/img/may.png"
   },
   {
-    "revision": "b507eaee9f84008f1640f38fbe2bfde4",
+    "revision": "31d2134e939f5d196074bc1d27592c85",
     "url": "/Jezz/index.html"
   },
   {
-    "revision": "bc33023f34186cec3ef8",
-    "url": "/Jezz/js/app.2b8cc3ea.js"
+    "revision": "340e74033ee7c7965b7f",
+    "url": "/Jezz/js/app.b46df949.js"
   },
   {
     "revision": "c06d7a0712080433961f",
