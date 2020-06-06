@@ -147,7 +147,10 @@ export default {
         },
 
         reset(){
-            this.random =Math.floor(Math.random() * 10)
+            this.random = Math.floor(Math.random() * 1000) % 21
+
+            if (this.random < 10) this.random = `0${this.random}`
+
             window.scrollTo({ top: 0, behavior: 'smooth' })
         }
     }   
