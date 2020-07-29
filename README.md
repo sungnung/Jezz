@@ -29,3 +29,4 @@ yarn run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 안녕 병훈!! :)
+웅~ 내일보자 슬기 :)
